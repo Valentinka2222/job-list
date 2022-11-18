@@ -1,0 +1,23 @@
+.card__info_title {
+  color: #3a4562;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+}
+.posted {
+  display: flex;
+  margin-left: auto;
+  height: 17px;
+  margin: 13px 16px 14px 100px;
+}
+.card__header {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
+  width: 100%;
+}
+.card__stars {
+  display: flex;
+  align-items: center;
+}
