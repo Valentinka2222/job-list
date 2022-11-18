@@ -1,4 +1,4 @@
-## Calendar-typescript
+## Job-list-typescript
 
 ## Available Scripts
 
@@ -19,10 +19,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-<img src="src/img/calendar.jpg" height='150px' width='150px' alt='Calendar'/>
 
 <lu style="font-size:20px" ><b>The tech stack is:</b>
 
