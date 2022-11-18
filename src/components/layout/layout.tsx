@@ -12,8 +12,9 @@ const Layout = (): ReactElement<IJobList> => {
   const data = useGlobalState('list') as Partial<IData>;
   useEffect(() => {
     getJobsList().then(res => setJobList((data.data = res)));
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const list: Array<IJobList>= jobList.data;
+  const list: Array<IJobList> = jobList.data;
   const length = list.length;
   const PER_PAGE = Math.floor(5);
   const count = Math.ceil(length / PER_PAGE);
