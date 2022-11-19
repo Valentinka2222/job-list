@@ -97,7 +97,7 @@ const Details: React.FC = () => {
         </div>
       </div>
 
-      <NavLink to="/" className="btn-return ">
+      <NavLink to="/" className="btn-return">
         <img className="h-4.5 w-2.5" src={logo} alt="Icon Arrow" />
         <span className="z-10 ml-5 ">RETURN TO JOB BOARD</span>
       </NavLink>
