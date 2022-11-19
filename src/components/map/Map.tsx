@@ -1,4 +1,5 @@
 import { GoogleMap, MarkerF, useJsApiLoader } from '@react-google-maps/api';
+import CircularProgress from '@mui/material/CircularProgress';
 import { defaultTheme } from './Theme';
 import logo from '../../images/map-marker-alt-solid.svg';
 import { MapProps, Libraries } from '../../types';
@@ -31,32 +32,39 @@ const defaultOptions = {
 };
 
 const Map: React.FC<MapProps> = ({ center }) => {
-  const { isLoaded } = useJsApiLoader({
+  const { isLoaded, loadError } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: API_KEY || '',
     libraries,
   });
 
-  return (
-    <>
-      {isLoaded && (
-        <GoogleMap
-          options={defaultOptions}
-          mapContainerStyle={containerStyle}
-          center={center}
-          zoom={11}
-        >
-          <MarkerF
-            icon={{
-              url: logo,
-              scale: 3,
-            }}
-            position={center}
-          />
-        </GoogleMap>
-      )}
-    </>
-  );
+  const renderMap = () => {
+    return (
+      <>
+        {isLoaded && (
+          <GoogleMap
+            options={defaultOptions}
+            mapContainerStyle={containerStyle}
+            center={center}
+            zoom={11}
+          >
+            <MarkerF
+              icon={{
+                url: logo,
+                scale: 3,
+              }}
+              position={center}
+            />
+          </GoogleMap>
+        )}
+      </>
+    );
+  };
+
+  if (loadError) {
+    return <div>Map cannot be loaded right now, sorry.</div>;
+  }
+  return isLoaded ? renderMap() : <CircularProgress disableShrink />;
 };
 
 export default Map;
