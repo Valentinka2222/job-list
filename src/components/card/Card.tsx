@@ -57,7 +57,6 @@ const Card: React.FC<CardProps> = ({ card }) => {
           >
             <RatingComponent
               classString="xl:m-auto"
-              bookMark={null}
               max={5}
               sx={{
                 color: '#384564',

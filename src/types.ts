@@ -26,7 +26,6 @@ export type ImgListProps = {
 export type RatingComponentProps = {
   sx: { [key: string]: number | string | {} };
   classString: string;
-  bookMark: { [key: string]: string | number } | null;
   max: number;
 };
 export type TypesProps = {
