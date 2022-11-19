@@ -1,3 +1,34 @@
+export interface IData {
+  data: Array<IJobList>;
+}
+export interface IList {
+  list: DataPagination;
+}
+export interface UseLoadScriptOptions {
+  isLoaded: {
+    id: string;
+    googleMapsApiKey: string | '';
+  };
+}
+export interface DataPagination {
+  next: () => void;
+  prev: () => void;
+  jump: (page: number) => void;
+  currentData: () => [] | IJobList[];
+  currentPage: number;
+  maxPage: number;
+}
+export interface LoadScriptUrlOptions {
+  googleMapsApiKey: string | '';
+  googleMapsClientId?: string;
+  version?: string;
+  language?: string;
+  region?: string;
+  channel?: string;
+  mapIds?: string[];
+  authReferrerPolicy?: 'origin';
+}
+
 export interface IJobList {
   id: string;
   name: string;
@@ -13,36 +44,4 @@ export interface IJobList {
   updatedAt: string;
   description: string;
   employment_type: string[];
-}
-export interface IData {
-  data: Array<IJobList>;
-}
-
-export interface DataPagination {
-  next: () => void;
-  prev: () => void;
-  jump: (page: number) => void;
-  currentData: () => [] | IJobList[];
-  currentPage: number;
-  maxPage: number;
-}
-export interface IList {
-  list: DataPagination;
-}
-export interface UseLoadScriptOptions {
-  isLoaded: {
-    id: string ;
-    googleMapsApiKey: string | '';
-  };
-}
-
-export interface LoadScriptUrlOptions {
-  googleMapsApiKey: string | '';
-  googleMapsClientId?: string;
-  version?: string;
-  language?: string;
-  region?: string;
-channel?: string;
-  mapIds?: string[];
-  authReferrerPolicy?: 'origin';
 }
